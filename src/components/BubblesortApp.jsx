@@ -2,7 +2,7 @@ import React, { useState } from 'react';
  
 const BubbleSortApp = () => {
   const [inputArray, setInputArray] = useState('');
-  const [sortOrder, setSortOrder] = useState('asc');
+  const [sortOrder, setSortOrder] = useState('');
   const [sortedArray, setSortedArray] = useState([]);
  
   const bubbleSort = (arr, order) => {
@@ -37,9 +37,7 @@ const BubbleSortApp = () => {
           value={inputArray}
           onChange={(e) => setInputArray(e.target.value)}
         />
-      </label>
- 
-      <br />
+      </label> <br/><br/>
  
       <label>
         Sort order:
@@ -50,13 +48,9 @@ const BubbleSortApp = () => {
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
-      </label>
+      </label><br/><br/>
  
-      <br />
- 
-      <button onClick={handleSort}>Sort</button>
- 
-      <br />
+      <button onClick={handleSort}>Sort</button><br/><br/>
  
       <div>
         <strong>Sorted Array:</strong> {sortedArray.join(', ')}
