@@ -1,25 +1,16 @@
-import logo from './logo.svg';
+import React from 'react';
+import BubbleSortApp from './components/BubblesortApp';
 import './App.css';
+import Visualisation from './components/Visualisation';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Bubble Sort App</h1><br/>
+      <BubbleSortApp /><br/><br/>
+      <Visualisation />
     </div>
   );
-}
+};
 
 export default App;
