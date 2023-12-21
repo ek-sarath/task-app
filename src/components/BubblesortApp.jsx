@@ -1,45 +1,62 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
  
 const BubbleSortApp = () => {
   const [inputArray, setInputArray] = useState('');
+  const [sortOrder, setSortOrder] = useState('asc');
   const [sortedArray, setSortedArray] = useState([]);
  
-  const bubbleSort = (arr) => {
+  const bubbleSort = (arr, order) => {
+    const n = arr.length;
+    let swapped;
+ 
+    do {
+      swapped = false;
+      for (let i = 0; i < n - 1; i++) {
+        if ((order === 'asc' && arr[i] > arr[i + 1]) || (order === 'desc' && arr[i] < arr[i + 1])) {
+          [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+          swapped = true;
+        }
+      }
+    } while (swapped);
+ 
     return arr;
   };
  
   const handleSort = () => {
     const arrayToSort = inputArray.split(',').map(Number);
-    const sorted = bubbleSort([...arrayToSort]);
+    const sorted = bubbleSort([...arrayToSort], sortOrder);
     setSortedArray(sorted);
   };
  
-
-
   return (
     <div className='BubbleSort'>
-
       <label>
-        Enter numbers : <input type="text" value={inputArray}
+        Enter numbers :
+        <input
+          type="text"
+          value={inputArray}
           onChange={(e) => setInputArray(e.target.value)}
         />
       </label>
  
-      <br/><br/>
+      <br />
  
       <label>
-        Sort order : 
-        <select>
-          <option>Ascending</option>
-          <option>Descending</option>
+        Sort order:
+        <select
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+        >
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
         </select>
       </label>
  
-      <br/><br/>
+      <br />
  
-      <button onClick={handleSort}>Sort Array</button>
+      <button onClick={handleSort}>Sort</button>
  
-      <br/><br/><br/>
+      <br />
  
       <div>
         <strong>Sorted Array:</strong> {sortedArray.join(', ')}
