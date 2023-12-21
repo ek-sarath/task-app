@@ -2,7 +2,7 @@ import React, { useState } from 'react';
  
 const BubbleSortApp = () => {
   const [inputArray, setInputArray] = useState('');
-  const [sortOrder, setSortOrder] = useState('');
+  const [sortOrder, setSortOrder] = useState('asc');
   const [sortedArray, setSortedArray] = useState([]);
  
   const bubbleSort = (arr, order) => {
