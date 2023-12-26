@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Visualisation = ({ sortedArray }) => {
+const Visualisation = ({sortedArray}) => {
   const maxBarHeight = 200;
   const barWidth = 30;
 
@@ -13,7 +13,7 @@ const Visualisation = ({ sortedArray }) => {
 
   return (
     <div className='Visualisation'>
-      <h1>Visualisation</h1>
+      <h1>Visualization</h1>
       <h3>Graphical Representation</h3><br/>
       <div style={containerStyle}>
         {sortedArray.map((value, index) => (
