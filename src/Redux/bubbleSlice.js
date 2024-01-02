@@ -15,6 +15,6 @@ export const bubbleSlice = createSlice({
 })
 
 
-export const { setinputarray } = bubbleSlice.actions
+export const {setinputarray} = bubbleSlice.actions
 
 export default bubbleSlice.reducer

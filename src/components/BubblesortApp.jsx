@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux'
-import { setinputarray} from '../Redux/bubbleSlice'
+import React, {useState} from 'react';
+import {useDispatch} from 'react-redux'
+import {setinputarray} from '../Redux/bubbleSlice'
 
 const BubbleSortApp = () => {
   const [inputArray, setInputArray] = useState('');
@@ -23,7 +23,7 @@ const BubbleSortApp = () => {
           swapped = true;
 
           await new Promise(resolve => setTimeout(resolve, 500));
-          setSortedArray([...arr]);
+          // setSortedArray([...arr]);
           dispatch(setinputarray([...arr]));
         }
       }
@@ -69,9 +69,9 @@ const BubbleSortApp = () => {
 
       <button onClick={handleSort}>Sort</button> <br/><br/>
 
-      <div>
+      {/* <div>
         <strong>Sorted Array:</strong> {sortedArray.join(', ')}
-      </div> <br/><br/>
+      </div> <br/><br/> */}
 
       <div>
         <strong>Sorting Time:</strong> {sortingTime.toFixed(2)} ms

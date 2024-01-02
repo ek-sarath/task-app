@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <div>
-      <BubbleSortApp/> <br/>
+      <BubbleSortApp/>
       <Visualisation/>
     </div>
   );
