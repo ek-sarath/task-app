@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const BubbleSortApp = ({setSortedArray}) => {
   const [inputArray, setInputArray] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
-  const [sortedArray, setSortedArrayState] = useState([]);
+  const [sortedArray] = useState([]);
   const [sortingTime, setSortingTime] = useState(0);
 
   const bubbleSort = async (arr, order) => {
@@ -20,7 +20,7 @@ const BubbleSortApp = ({setSortedArray}) => {
           swapped = true;
 
           await new Promise(resolve => setTimeout(resolve, 500));
-          setSortedArrayState([...arr]);
+          setSortedArray([...arr]);
         }
       }
     } while (swapped);
@@ -37,8 +37,12 @@ const BubbleSortApp = ({setSortedArray}) => {
     setSortedArray(sorted);
   };
 
+
   return (
     <div className='BubbleSort'>
+
+      <h1>Bubble Sort App</h1>
+
       <label>
         Enter numbers:
         <input
