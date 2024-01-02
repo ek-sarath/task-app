@@ -4,7 +4,7 @@ import {useSelector} from 'react-redux';
 const Visualisation = () => {
   const maxBarHeight = 200;
   const barWidth = 30;
-  const sortedArray=useSelector((state)=>state.bubble.array)
+  const sortedArray = useSelector((state)=>state.bubble.array)
   
   const containerStyle = {
     display: 'flex',
