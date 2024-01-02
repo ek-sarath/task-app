@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import BubbleSortApp from './components/BubblesortApp';
+import React from 'react';
 import './App.css';
+import BubbleSortApp from './components/BubblesortApp';
 import Visualisation from './components/Visualisation';
 
 const App = () => {
-  const [sortedArray, setSortedArray] = useState([]);
 
   return (
     <div>
-      <BubbleSortApp setSortedArray={setSortedArray} /> <br/><br/>
-      <Visualisation sortedArray={sortedArray} />
+      <BubbleSortApp/> <br/>
+      <Visualisation/>
     </div>
   );
 };

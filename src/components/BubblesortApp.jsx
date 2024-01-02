@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux'
+import { setinputarray} from '../Redux/bubbleSlice'
 
-const BubbleSortApp = ({setSortedArray}) => {
+const BubbleSortApp = () => {
   const [inputArray, setInputArray] = useState('');
   const [sortOrder, setSortOrder] = useState('asc');
-  const [sortedArray] = useState([]);
+  const [sortedArray, setSortedArray] = useState([]);
   const [sortingTime, setSortingTime] = useState(0);
+  const dispatch=useDispatch();
 
   const bubbleSort = async (arr, order) => {
     const start = performance.now();
@@ -21,6 +24,7 @@ const BubbleSortApp = ({setSortedArray}) => {
 
           await new Promise(resolve => setTimeout(resolve, 500));
           setSortedArray([...arr]);
+          dispatch(setinputarray([...arr]));
         }
       }
     } while (swapped);

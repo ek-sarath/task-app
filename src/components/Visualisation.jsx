@@ -1,9 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-const Visualisation = ({sortedArray}) => {
+const Visualisation = () => {
   const maxBarHeight = 200;
   const barWidth = 30;
-
+  const sortedArray=useSelector((state)=>state.bubble.array)
+  console.log(sortedArray);
   const containerStyle = {
     display: 'flex',
     alignItems: 'flex-end', 
@@ -16,7 +18,7 @@ const Visualisation = ({sortedArray}) => {
       <h1>Visualization</h1>
       <h3>Graphical Representation</h3><br/>
       <div style={containerStyle}>
-        {sortedArray.map((value, index) => (
+        {sortedArray?.map((value, index) => (
           <div
             key={index}
             style={{
